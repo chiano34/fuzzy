@@ -1,0 +1,38 @@
+[System]
+Name='Untitled2'
+Type='sugeno'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=5
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='x'
+Range=[-1 1]
+NumMFs=5
+MF1='x1':'gaussmf',[0.2124 -1]
+MF2='x2':'gaussmf',[0.2124 -0.6]
+MF3='x3':'gaussmf',[0.212 0]
+MF4='x4':'gaussmf',[0.212 0.3]
+MF5='x5':'gaussmf',[0.2124 1]
+
+[Output1]
+Name='y'
+Range=[0 1]
+NumMFs=4
+MF1='1':'constant',[0]
+MF2='0.95':'constant',[0.333333333333333]
+MF3='0.8':'constant',[0.666666666666667]
+MF4='0':'constant',[1]
+
+[Rules]
+1, 4 (1) : 1
+2, 3 (1) : 1
+3, 1 (1) : 1
+4, 2 (1) : 1
+5, 4 (1) : 1
